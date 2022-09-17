@@ -1,0 +1,10 @@
+  <%= render 'shared/errors', object: article %>
+  <%= form_with(model: article) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", style: "width: 30%; background-color: #B5B7B4;" %>
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control", style: "background-color: #B5B7B4" %>
+    <%= f.submit type, class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "show all article", articles_path %>
