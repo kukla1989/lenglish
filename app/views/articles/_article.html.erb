@@ -1,5 +1,4 @@
 <div class="article">
-  <li>
     <h3><%= article.title %></h3>
     <p> <%= article.content %></p>
     <div style="display:flex;">
@@ -8,5 +7,4 @@
       <%= button_to 'delete', article_url(article), method: :delete,
                     form: {data: {turbo_confirm: "are you sure?"}}, class: "btn btn-primary" %>
     </div>
-  </li>
 </div>

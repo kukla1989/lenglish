@@ -1,8 +1,7 @@
 <div class="main">
-  <nav aria-label="pagination of articles" class="digg_pagination">
-    <%= will_paginate @articles, class: "navigation"%>
-  </nav>
-  <ul>
+  <div class="pagination">
+    <%= will_paginate @articles, class: "digg_pagination"%>
+  </div>
     <%= render @articles %>
-  </ul>
+  <%= will_paginate @articles, class: "digg_pagination"%>
 </div>
