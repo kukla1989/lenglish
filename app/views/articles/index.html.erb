@@ -1,4 +1,8 @@
 <div class="main">
-  <%= render @articles %>
-  <%= link_to "new article", new_article_path %>
+  <nav aria-label="pagination of articles" class="digg_pagination">
+    <%= will_paginate @articles, class: "navigation"%>
+  </nav>
+  <ul>
+    <%= render @articles %>
+  </ul>
 </div>

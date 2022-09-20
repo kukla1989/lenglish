@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.all.paginate(page: params[:page])
   end
 
   def edit
@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else
-      render :edit, status: :unprocessable_entity
+      render "edit", status: :unprocessable_entity
     end
   end
 
