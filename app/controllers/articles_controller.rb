@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
 
+  def renglish
+    @word = "sdfsdf"
+  end
+
+
   def home
   end
 

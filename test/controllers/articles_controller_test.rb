@@ -64,8 +64,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "article content length should be less then 131 symbols" do
-    content = "a" * 131
+  test "article content length should be less then 2 001 symbols" do
+    content = "a" * 2002
     assert_no_difference 'Article.count' do
       post articles_path, params: {article: {title: "title", content: content}}
     end
