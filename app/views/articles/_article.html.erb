@@ -3,7 +3,8 @@
     <p> <%= article.content %></p>
     <div style="display:flex;">
       <%= link_to "edit", edit_article_path(article), class: "btn btn-primary" %>
-      <%= button_to 'delete', article_url(article), method: :delete,
-                    form: {data: {turbo_confirm: "are you sure?"}}, class: "btn btn-primary" %>
+
+      <%= link_to "delete", article, class: "btn btn-primary",
+                  data: {turbo_method: :delete, turbo_confirm: "are you sure?"} %>
     </div>
 </div>
