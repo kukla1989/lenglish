@@ -1,9 +1,8 @@
 module ApplicationHelper
 
-  def device
+  def mobile?
     agent = request.user_agent
     return "tablet" if agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
-    return "mobile" if agent =~ /Mobile/
-    return "desktop"
+    agent =~ /Mobile/ ? true : false
   end
 end

@@ -1,4 +1,4 @@
 <h3 style="width:50%;margin:auto; margin-top:1em;">update article <%= @article.title %></h3>
-<div class="main">
+<div class=<%= mobile? ? "main_mobile" : "main" %>>
   <%= render "form", article: @article, type: "update" %>
 </div>
