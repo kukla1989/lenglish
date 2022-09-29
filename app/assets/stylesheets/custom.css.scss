@@ -40,6 +40,11 @@ a.nav-link {
 }
 
 //--------------------------articles-------------------
+textarea {
+  height:10em;
+    background-color: $slightly-gray !important;
+}
+
 .article {
   border-bottom: solid 3px #A653FF;
   padding-bottom: 1em;
@@ -58,7 +63,7 @@ a.nav-link {
   margin-bottom: 2em;
   padding: 1em;
   width: 65%;
-  border: 3px solid #4d5154;
+  border: 3px solid blueviolet;
   display: block;
 }
 
@@ -92,6 +97,11 @@ body {
 button {
   margin: 0.2em;
 }
+
+input.form-control {
+  background-color: $slightly-gray !important;
+}
+
 //-------------------pagination---------------------
 .digg_pagination {
   cursor: default;

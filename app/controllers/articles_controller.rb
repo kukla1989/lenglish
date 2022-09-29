@@ -1,11 +1,7 @@
 class ArticlesController < ApplicationController
 
   def renglish
-    @word = "sdfsdf"
-  end
-
-
-  def home
+    @article = Article.find(params[:id])
   end
 
   def new

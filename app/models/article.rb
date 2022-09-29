@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
-  validates :title, presence: true, length: {maximum: 30}
-  validates :content, presence: true, length: {maximum: 2000}
+  validates :title, presence: true, length: {maximum: 100}
+  validates :content, presence: true, length: {maximum: 10000}
+  default_scope -> { order(created_at: :desc)}
 end
