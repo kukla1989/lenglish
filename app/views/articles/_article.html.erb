@@ -3,7 +3,7 @@
     <p> <%= article.content %></p>
     <div style="display:flex;">
       <%= link_to "edit", edit_article_path(article), class: "btn btn-primary" %>
-      <%= button_to "delete", article_path(article), method: :delete,
-                    class: "btn btn-primary", style: "color:white!important;"  %>
+      <%= link_to "delete", article, class: "btn btn-primary", data:
+                    {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </div>
 </div>

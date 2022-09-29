@@ -20,7 +20,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
       post articles_url, params: { article: { content: @article.content, title: @article.title } }
     end
 
-    assert_redirected_to article_url(Article.last)
+    assert_redirected_to article_url(Article.first)
   end
 
   test "should show article" do
@@ -57,15 +57,15 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "article title length should be less then 31 symbols" do
-    title = "a" * 31
+  test "article title length should be less then 101 symbols" do
+    title = "a" * 101
     assert_no_difference 'Article.count' do
       post articles_path, params: {article: {title: title, content: "content"}}
     end
   end
 
-  test "article content length should be less then 2 001 symbols" do
-    content = "a" * 2002
+  test "article content length should be less then 10 001 symbols" do
+    content = "a" * 10001
     assert_no_difference 'Article.count' do
       post articles_path, params: {article: {title: "title", content: content}}
     end

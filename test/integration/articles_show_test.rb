@@ -16,6 +16,6 @@ class ArticlesShowTest < ActionDispatch::IntegrationTest
   test "link to edit end delete" do
     get article_path @article
     assert_select "a", "edit"
-    assert_select "button", "delete"
+    assert_select "a", "delete"
   end
 end
