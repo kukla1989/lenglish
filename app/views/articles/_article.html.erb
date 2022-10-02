@@ -2,6 +2,8 @@
     <h3><%= article.title %></h3>
     <p> <%= article.content %></p>
     <div style="display:flex;">
+      <%= link_to "learn this", renglish_article_path(article),
+                  class: "btn btn-primary" %>
       <%= link_to "edit", edit_article_path(article), class: "btn btn-primary" %>
       <%= link_to "delete", article, class: "btn btn-primary", data:
                     {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

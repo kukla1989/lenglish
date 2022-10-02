@@ -6,15 +6,11 @@ $light-violet: #8626B7;
 
 
 //----------make everything violet----------
-button {
-  color: $light-violet!important;
-}
-
 .btn {
-  background-color: $violet;
-  border: $violet;
+  background-color: $violet!important;
+  border: $violet!important;
   &:hover {
-    background-color: blueviolet;
+    background-color: blueviolet!important;
   }
 }
 
@@ -57,24 +53,30 @@ textarea {
   margin: 3em;
 }
 
-.main {
+@mixin main {
   margin: auto;
-  margin-top: 3em;
   margin-bottom: 2em;
   padding: 1em;
-  width: 65%;
   border: 3px solid blueviolet;
   display: block;
 }
 
-.main_min {
-  margin: auto;
-  width: 30%;
+.main {
+  @include main;
+  width: 65%;
   margin-top: 3em;
-  margin-bottom: 2em;
-  padding: 1em;
-  border: 3px solid #4d5154;
-  display: block;
+}
+
+.main_min {
+  @include main;
+  width: 30%;
+  margin-top: 1em;
+}
+
+.main_sentence {
+  @include main;
+  width: 45%;
+  margin-top: 3em;
 }
 
 .main_mobile {
@@ -103,6 +105,11 @@ input.form-control {
 }
 
 //-------------------pagination---------------------
+.pagination {
+  margin: auto;
+  width: 50%;
+}
+
 .digg_pagination {
   cursor: default;
   /* self-clearing method: */ }
@@ -178,5 +185,22 @@ footer {
       margin-left: 15px;
     }
   }
+}
 
+//----------learn english by sentences----------
+#sentence {
+  text-align: center;
+}
+
+div.sentence {
+  margin: auto;
+  width: 40%;
+}
+
+#last-sentence {
+  color:$light-gray;
+  font-size: small;
+  text-align: center;
+  margin: 0;
+  display: none;
 }

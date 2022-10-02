@@ -3,5 +3,7 @@
     <%= will_paginate @articles, class: "digg_pagination"%>
   </div>
     <%= render @articles %>
-  <%= will_paginate @articles, class: "digg_pagination"%>
+  <div class="pagination">
+    <%= will_paginate @articles, class: "digg_pagination"%>
+  </div>
 </div>

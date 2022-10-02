@@ -1,3 +1,15 @@
-<div class=<%= mobile? ? "main_mobile" : "main" %> >
-  <%= @article.content %>
-</div>>
+<div class="<%= mobile? ? "main_mobile" : "main_sentence" %>" >
+  <p id="sentence"><%= @article.title %></p>
+  <p id="last-sentence">this is last sentence in this article go to
+  <%= link_to "home", root_path, class:"last-sentence" %> to see more article</p>
+  <div class="sentence" data-controller="renglish">
+    <input data-renglish-target="name" type="text" style="display:none"
+           value="<%= @article.title + ". " + @article.content %>" >
+    <button data-action="click->renglish#previous" class="btn btn-primary">previous</button>
+    <button data-action="click->renglish#next" class="btn btn-primary">next</button>
+  </div>
+</div>
+
+
+
+
