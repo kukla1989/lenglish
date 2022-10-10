@@ -1,5 +1,5 @@
 <div class=<%= mobile? ? "main_mobile" : "main_min" %>>
-  <h2 class="page-title">Sign up</h2>
+  <h2 class="page-title" style="text-align: center">Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/errors", object: resource %>
