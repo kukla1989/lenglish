@@ -12,14 +12,6 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new article_params
     if @article.save
-      client = Aws::Translate::Client.new
-      resp = client.translate_text({
-                                     text: @article.content, # required
-                                     source_language_code: "en", # required
-                                     target_language_code: "ru", # required
-                                   })
-      TranslatedArticle.create(article: @article, translated: resp.translated_text,
-                               language: "en")
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
