@@ -2,14 +2,18 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
     static targets = ["name"]
-    static arr = []
-    static ind
 
     connect() {
-        let article = this.name
-        this.arr = article.match(/[^\.!\?]+[\.!\?]+["']?|\s*$/g)
+        let translated_articles = document.getElementById("translated_article").value
+        let translated_arr = translated_articles.match(/[^\.!\?]+[\.!\?]+["']?|\s*$/g)
+        let article_arr = this.name.match(/[^\.!\?]+[\.!\?]+["']?|\s*$/g)
+        this.arr = []
+        for (let i = 0; i < translated_arr.length; i++){
+            this.arr.push(article_arr[i])
+            this.arr.push(translated_arr[i])
+        }
         this.ind = 0
-        if (this.arr[this.arr.length - 1] === "") {
+        while (this.arr[this.arr.length - 1] === "" || this.arr[this.arr.length - 1].length < 5) {
             this.arr.pop()
         }
     }
