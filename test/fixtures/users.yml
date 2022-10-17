@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 
-user1:
-  email: user1@mysite.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'passw0rd!') %>
+roma:
+  email: roma@gmail.com
+  username: roma
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

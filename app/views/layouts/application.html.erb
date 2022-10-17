@@ -13,12 +13,8 @@
 
   <body>
     <%= render "layouts/header" %>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-      <p class="alert alert-success"><%= alert %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type == "alert" ? "danger" : "success"} ") %>
     <% end %>
     <%= yield %>
     <%= render "layouts/footer" %>

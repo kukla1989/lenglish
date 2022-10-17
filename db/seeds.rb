@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-64.times do |i|
-  Article.create title: "Title number - #{i}", content: "some content that i"\
-   " quickly came up. I choose to be rich. I choose to almost never be pity"
+31.times do |i|
+  Article.create title: "T#{i}", content: "c"
 end

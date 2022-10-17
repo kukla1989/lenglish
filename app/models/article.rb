@@ -9,7 +9,7 @@ class Article < ApplicationRecord
   def create_translated_article
     client = Aws::Translate::Client.new
     resp = client.translate_text({
-                                   text: self.title + ". " + self.content, # required
+                                   text: self.content, # required
                                    source_language_code: "en", # required
                                    target_language_code: "ru", # required
                                  })

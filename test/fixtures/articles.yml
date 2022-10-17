@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  content: MyText
+  title: "some title"
+  content: "some content. Persistence is key."
 
-two:
-  title: MyString
-  content: MyText
+
+
+<% 30.times do |i| %>
+article_<%= i.to_s %>:
+  title: Ti
+  content: S
+<% end %>

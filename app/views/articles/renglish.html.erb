@@ -5,7 +5,7 @@
   </p>
   <div class="sentence" data-controller="renglish">
     <input data-renglish-target="name" type="text" style="display:none"
-           value="<%= @article.title + ". " + @article.content %>" >
+           value="<%=  @article.content %>" >
     <input  style="visibility: hidden"
            value="<%= @article.translated_articles.first.translated %>" id="translated_article" >
     <button data-action="click->renglish#previous" class="btn btn-primary">previous</button>

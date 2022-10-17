@@ -70,6 +70,14 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
       post articles_path, params: {article: {title: "title", content: content}}
     end
   end
+
+  test "should show successful alert after create article" do
+    post articles_path, params: {article: {title: "title",content: "some content"}}
+    follow_redirect!
+    assert_equal "Congratulation! Article was created.", flash[:success]
+  end
+
+
 end
 
 

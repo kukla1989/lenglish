@@ -8,8 +8,9 @@ class ArticlesIndexTest < ActionDispatch::IntegrationTest
 
   test "links paginated pages should appear" do
     assert_template "articles/index"
-    assert_select "div.pagination"
-    assert_match "1", response.body
+    assert_select "span.previous_page"
+    assert_match "Previous", response.body
+    assert_select "a[href=?]", '/articles?page=2'
   end
 
 
