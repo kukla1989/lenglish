@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: :new
 
   def renglish
     @article = Article.find(params[:id])
@@ -11,6 +12,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new article_params
+    @article.user = current_user
     if @article.save
       flash[:success] = "Congratulation! Article was created."
       redirect_to @article
