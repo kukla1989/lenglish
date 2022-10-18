@@ -4,12 +4,16 @@
     <div style="display:flex;">
       <%= link_to "learn this", renglish_article_path(article),
                   class: "btn btn-primary" %>
-      <%= link_to "edit", edit_article_path(article), class: "btn btn-primary" %>
-      <%= link_to "delete", article, class: "btn btn-primary", data:
+      <% if article.user == current_user || admin? %>
+        <%= link_to "edit", edit_article_path(article), class: "btn btn-primary" %>
+        <%= link_to "delete", article, class: "btn btn-primary", data:
                     {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% end %>
     </div>
       <span class="small-gray">
-        Posted <%= time_ago_in_words(article.created_at, "data-local": "time-ago") %> ago
+        Posted - <%= time_ago_in_words(article.created_at, "data-local": "time-ago") %> ago
+        <br>
+        By user - <%= article.user.username %>
       </span>
 
 </div>

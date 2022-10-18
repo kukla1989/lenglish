@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_article, only: %i[show edit update renglish]
+  before_action :set_article, only: %i[show edit update destroy renglish]
+  before_action :correct_user, only: %i[update, destroy]
 
   def set_article
     @article = Article.find(params[:id])
@@ -43,7 +44,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    Article.find(params[:id]).destroy
+    @article.destroy
     flash[:success] = "article was destroed"
     redirect_to root_url, status: :see_other
   end
@@ -52,5 +53,12 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :content)
+  end
+
+  def correct_user
+    unless current_user || current_user == @article.user
+      flash[:danger] = "You dont have permission to do this!"
+      redirect_to root_path, status: :unprocessable_entity
+    end
   end
 end
