@@ -197,13 +197,16 @@ div.sentence {
   width: 40%;
 }
 
-#last-sentence {
-  color:$light-gray;
+.small-gray {
+  color: $light-gray;
   font-size: small;
   text-align: center;
   margin: 0;
+}
+#last-sentence{
   display: none;
 }
+
 ///-----------------devise---------------------
 .title{
   text-align: center;

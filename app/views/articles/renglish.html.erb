@@ -1,6 +1,6 @@
 <div class="<%= mobile? ? "main_mobile" : "main_sentence" %>" >
   <p id="sentence"><%= @article.title %></p>
-  <p id="last-sentence">this is last sentence in this article go to
+  <p id="last-sentence" class="small-gray">this is last sentence in this article go to
     <%= link_to "home", root_path, class:"last-sentence" %> to see more article
   </p>
   <div class="sentence" data-controller="renglish">
