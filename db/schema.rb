@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_170323) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_11_130741) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -34,13 +34,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_170323) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "username", null: false
+    t.string "language", default: "ru", null: false
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
-    t.string "language", default: "ru"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "translated_articles", "articles"
