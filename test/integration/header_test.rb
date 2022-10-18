@@ -1,7 +1,6 @@
 require "test_helper"
 
 class HeaderTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
 
 
   test "links without log in" do

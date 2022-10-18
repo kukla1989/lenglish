@@ -3,6 +3,7 @@
 one:
   title: "some title"
   content: "some content. Persistence is key."
+  user_id: 1
 
 
 
@@ -10,4 +11,5 @@ one:
 article_<%= i.to_s %>:
   title: Ti
   content: S
+  user_id: 1
 <% end %>

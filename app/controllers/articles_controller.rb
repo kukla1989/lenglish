@@ -1,9 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: :new
+  before_action :set_article, only: %i[show edit update renglish]
 
-  def renglish
+  def set_article
     @article = Article.find(params[:id])
   end
+
+  def renglish; end
 
   def new
     @article = Article.new
@@ -22,20 +25,16 @@ class ArticlesController < ApplicationController
   end
 
 
-  def show
-    @article = Article.find(params[:id])
-  end
+  def show; end
 
   def index
     @articles = Article.all.paginate(page: params[:page])
   end
 
-  def edit
-    @article = Article.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @article = Article.find(params[:id])
+    @article.user = current_user
     if @article.update(article_params)
       redirect_to @article
     else
