@@ -52,7 +52,7 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.1.3'
 
 # Use Devise
-gem 'devise'
+gem "devise", github: "heartcombo/devise", ref: "f8d1ea90bc3"
 
 gem 'aws-sdk-translate', '~> 1.46'
 

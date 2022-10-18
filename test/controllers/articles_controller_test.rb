@@ -2,7 +2,7 @@ require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @article = articles(:one)
+    @article = articles(:roma)
     sign_in(users(:roma))
   end
 

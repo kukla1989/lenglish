@@ -1,4 +1,7 @@
 <h3 style="width:50%;margin:auto; margin-top:1em;">update article <%= @article.title %></h3>
 <div class=<%= mobile? ? "main_mobile" : "main" %>>
   <%= render "form", article: @article, type: "update" %>
+  <span class="small-gray">
+     By user - <%= @article.user.username %>
+  </span>
 </div>

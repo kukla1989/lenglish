@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: %i[new edit update destroy]
   before_action :set_article, only: %i[show edit update destroy renglish]
-  before_action :correct_user, only: %i[update, destroy]
+  before_action :correct_user, only: %i[edit update, destroy]
 
   def set_article
     @article = Article.find(params[:id])
@@ -56,9 +56,13 @@ class ArticlesController < ApplicationController
   end
 
   def correct_user
-    unless current_user || current_user == @article.user
-      flash[:danger] = "You dont have permission to do this!"
-      redirect_to root_path, status: :unprocessable_entity
+    if !(current_user.admin)
+      unless current_user && current_user == @article.user
+        flash[:alert] = "You dont have permission to do this! Please log in"\
+          "or create your own article!"
+
+        redirect_to new_user_session_path
+      end
     end
   end
 end

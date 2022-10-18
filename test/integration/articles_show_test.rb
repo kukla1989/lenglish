@@ -2,7 +2,7 @@ require "test_helper"
 
 class ArticlesShowTest < ActionDispatch::IntegrationTest
   def setup
-    @article = articles(:one)
+    @article = articles(:roma)
   end
 
 
@@ -14,6 +14,7 @@ class ArticlesShowTest < ActionDispatch::IntegrationTest
 
 
   test "link to edit end delete" do
+    sign_in(users(:admin))
     get article_path @article
     assert_select "a", "edit"
     assert_select "a", "delete"

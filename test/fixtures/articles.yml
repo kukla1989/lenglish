@@ -1,15 +1,24 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+roma:
   title: "some title"
   content: "some content. Persistence is key."
-  user_id: 1
+  user: roma
 
+inna:
+  title: "some title"
+  content: "some content. Persistence is key."
+  user: inna
+
+admin:
+  title: "some title"
+  content: "some content. Persistence is key."
+  user: admin
 
 
 <% 30.times do |i| %>
 article_<%= i.to_s %>:
   title: Ti
   content: S
-  user_id: 1
+  user: roma
 <% end %>
