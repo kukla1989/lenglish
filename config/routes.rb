@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :articles do
     member do
       get :renglish
+      get :user_articles
     end
   end
 

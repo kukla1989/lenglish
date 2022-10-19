@@ -3,11 +3,15 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy renglish]
   before_action :correct_user, only: %i[edit update, destroy]
 
-  def set_article
-    @article = Article.find(params[:id])
-  end
+
 
   def renglish; end
+
+  def user_articles
+    @articles = Article.where(user_id: params[:id]).paginate(page: params[:page])
+
+  end
+
 
   def new
     @article = Article.new
@@ -53,6 +57,10 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :content)
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 
   def correct_user

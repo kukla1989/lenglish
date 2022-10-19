@@ -1,9 +1,1 @@
-<div class=<%= mobile? ? "main_mobile" : "main" %>>
-  <div class="pagination">
-    <%= will_paginate @articles, class: "digg_pagination"%>
-  </div>
-    <%= render @articles %>
-  <div class="pagination">
-    <%= will_paginate @articles, class: "digg_pagination"%>
-  </div>
-</div>
+<%= render "many_articles" %>
