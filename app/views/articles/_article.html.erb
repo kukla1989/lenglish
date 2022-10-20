@@ -14,5 +14,10 @@
         Posted - <%= time_ago_in_words(article.created_at, "data-local": "time-ago") %> ago
         <br>
         By user - <%= link_to article.user.username, user_articles_article_path(article.user) %>
+        <% if article.user.avatar.present? %>
+        <%= image_tag(current_user.avatar, class: "rounded-circle") %>
+        <% else %>
+          <%= image_tag("default_avatar_small.png") %>
+      <% end %>
       </span>
 </div>
