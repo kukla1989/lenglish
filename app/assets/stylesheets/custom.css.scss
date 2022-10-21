@@ -214,3 +214,16 @@ div.sentence {
   padding-top:0.5em;
   font-family: 'Montserrat', sans-serif;
 }
+//----------------row-----------------
+.row {
+  display: flex;
+}
+.column{
+  float: left;
+}
+.left{
+  width: 15%
+}
+.right{
+  width: 85%;
+}

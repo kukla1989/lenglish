@@ -1,8 +1,17 @@
 <div class=<%= mobile? ? "main_mobile" : "main" %>>
   <% @users.each do  |user| %>
-    <div class="article">
-      <p ><%= user.username %> </p>
-      <p><%= user.email %> </p>
+    <div class="article row">
+      <div class="column left">
+        <% if user.avatar.present? %>
+            <%= image_tag(user.avatar.variant(:middle), class: "rounded-circle") %>
+        <% else %>
+            <%= image_tag("default_avatar_middle.png") %>
+        <% end %>
+      </div>
+      <div class="column right">
+        <p ><%= user.username %> </p>
+        <p><%= user.email %> </p>
+      </div>
     </div>
   <% end %>
 </div>
