@@ -83,6 +83,7 @@ end
 
 group :production do
   gem "pg"
+  gem "aws-sdk-s3", "1.114.0", require: false
 end
 
 gem "will_paginate", "~> 3.3"
