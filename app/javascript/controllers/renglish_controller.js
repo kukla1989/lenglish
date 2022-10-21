@@ -4,6 +4,7 @@ export default class extends Controller {
     static targets = ["name"]
 
     connect() {
+        console.log("this works")
         let translated_article = document.getElementById("translated_article").value
         let translated_arr = translated_article.match(/[^\.!\?]+[\.!\?]+["']?|\s*$/g)
         let article_arr = this.name.match(/[^\.!\?]+[\.!\?]+["']?|\s*$/g)
