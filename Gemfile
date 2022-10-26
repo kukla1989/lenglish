@@ -51,7 +51,9 @@ gem "bootsnap", require: false
 # Use Bootstrap 5
 gem 'bootstrap', '~> 5.1.3'
 
-# Use Devise
+
+gem "will_paginate", "~> 3.3"
+gem "rails-controller-testing"
 gem "devise", github: "heartcombo/devise", ref: "f8d1ea90bc3"
 gem 'aws-sdk-translate', '~> 1.46'
 gem "active_storage_validations", "0.9.8"
@@ -86,5 +88,3 @@ group :production do
   gem "aws-sdk-s3", "1.114.0", require: false
 end
 
-gem "will_paginate", "~> 3.3"
-gem "rails-controller-testing"
