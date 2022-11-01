@@ -5,6 +5,8 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 /.idea
+/db/development.sqlite3
+/db/test.sqlite3
 # Ignore bundler config.
 /.bundle
 
