@@ -6,10 +6,11 @@ class ArticlesShowTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "should display content and title" do
+  test "should display content, title and subject" do
     get article_path(@article)
     assert_select "h3", @article.title
     assert_select "p", @article.content
+    assert_select "h5", "subject: " + @article.subject
   end
 
 

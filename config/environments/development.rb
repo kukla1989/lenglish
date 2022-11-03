@@ -61,6 +61,7 @@ Rails.application.configure do
 
   # Set actionmailer host to localhost
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.hosts << "6db73605635f43e9a78644660c4ba6fe.vfs.cloud9.us-east-1.amazonaws.com"
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
