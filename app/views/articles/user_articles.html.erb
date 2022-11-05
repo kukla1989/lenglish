@@ -1,2 +1,17 @@
-<h3 class="title">All articles by user <%= @articles.first.user.username %></h3>
-<%= render "many_articles" %>
+<% if @articles.any? %>
+  <h3 class="title">All articles by user <%= @articles.first.user.username %></h3>    
+  <%= render "many_articles" %>
+<% else %>
+  <h3 class="title"> this user dont have  articles with this subject, pls choose another subject </h3>
+  <div  style="margin: 3em; margin: auto; width: 50%;">
+      <%= form_with   method: "get"  do |f| %>
+        <%= f.label "choose subject" %>
+        <%= f.select :subject, %w{common for_beginners nature self-development grammar},
+                                  {}, {class: "form-control", style: "width: 15%"} %>
+        <br>
+        <%= f.submit "show", class: "btn btn-primary" %>
+    <% end %>
+    <br><br>
+  </div>
+<% end %>
+  

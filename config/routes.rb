@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       get :user_articles
     end
   end
-
+ # get "/:subject", to: "articles#subject"
   root "articles#index"
 end

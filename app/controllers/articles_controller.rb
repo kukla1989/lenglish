@@ -8,8 +8,11 @@ class ArticlesController < ApplicationController
   def renglish; end
 
   def user_articles
-    @articles = Article.where(user_id: params[:id]).paginate(page: params[:page])
-
+    if params[:subject]
+      @articles = Article.where(user_id: params[:id]).where(subject: params[:subject]).paginate(page: params[:page])
+    else  
+      @articles = Article.where(user_id: params[:id]).paginate(page: params[:page])
+    end
   end
 
 
@@ -34,7 +37,12 @@ class ArticlesController < ApplicationController
   def show; end
 
   def index
-    @articles = Article.all.paginate(page: params[:page])
+    if params[:subject]
+      
+      @articles = Article.where(subject: params[:subject]).paginate(page: params[:page])
+    else  
+      @articles = Article.all.paginate(page: params[:page])
+    end  
   end
 
   def edit; end
@@ -75,3 +83,4 @@ class ArticlesController < ApplicationController
     end
   end
 end
+

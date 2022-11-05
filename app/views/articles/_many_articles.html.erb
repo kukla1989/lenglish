@@ -1,9 +1,28 @@
-<div class=<%= mobile? ? "main_mobile" : "main" %>>
-  <div class="pagination">
-    <%= will_paginate @articles, class: "digg_pagination"%>
+ <div class="row">
+   
+   <div class="column left" style="margin: 3em; margin-right: 0;">
+      <%= form_with   method: "get"  do |f| %>
+        <%= f.label "choose subject" %>
+        <%= f.select :subject, %w{common for_beginners nature self-development grammar},
+                                  {}, {class: "form-control", style: "width: 50%"} %>
+        <br>
+        <%= f.submit "show", class: "btn btn-primary" %>
+    <% end %>
+    <br><br>
   </div>
-  <%= render @articles %>
-  <div class="pagination">
-    <%= will_paginate @articles, class: "digg_pagination"%>
+
+  <div class=<%= mobile? ? "main_mobile" : "main column right"%> style="margin-left: 0;">
+    <% unless @articles.any? %>
+      <h3>unfortunatly there no one article with this subject but you can create!</h3>
+      <%= link_to "Create article", new_article_path %>
+    <% end %>
+    <div class="pagination">
+      <%= will_paginate @articles, class: "digg_pagination"%>
+    </div>
+    <%= render @articles %>
+    <div class="pagination">
+      <%= will_paginate @articles, class: "digg_pagination"%>
+    </div>
   </div>
+  
 </div>

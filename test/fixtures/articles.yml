@@ -6,6 +6,19 @@ roma:
   user: roma
   subject: self-development
 
+
+nature:
+  title: "some title"
+  content: "some content. Persistence is key."
+  user: roma
+  subject: nature
+
+nature2:
+  title: "some title"
+  content: "some content. Persistence is key."
+  user: roma
+  subject: nature  
+  
 inna:
   title: "some title"
   content: "some content. Persistence is key."

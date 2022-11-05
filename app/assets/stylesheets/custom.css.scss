@@ -56,6 +56,7 @@ textarea {
 @mixin main {
   margin: auto;
   margin-bottom: 2em;
+  margin-left: 0;
   padding: 1em;
   border: 3px solid blueviolet;
   display: block;
@@ -64,12 +65,14 @@ textarea {
 .main {
   @include main;
   width: 65%;
+  margin: auto;
   margin-top: 3em;
 }
 
 .main_min {
   @include main;
   width: 30%;
+  margin: auto;
   margin-top: 1em;
 }
 
@@ -102,6 +105,11 @@ button {
 
 input.form-control {
   background-color: $slightly-gray !important;
+}
+//------coose subject in index articles
+.flex-container {
+  display: flex;
+  justify-content: center;
 }
 
 //-------------------pagination---------------------
