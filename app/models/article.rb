@@ -7,14 +7,14 @@ class Article < ApplicationRecord
   after_create :create_translated_article
 
 
-  def create_translated_article
+  def create_translated_article(language = "ru")
     client = Aws::Translate::Client.new
     resp = client.translate_text({
                                    text: self.content, # required
                                    source_language_code: "en", # required
-                                   target_language_code: "ru", # required
+                                   target_language_code: language, # required
                                  })
     TranslatedArticle.create(article: self, translated: resp.translated_text,
-                             language: "en")
+                             language: language)
   end
 end

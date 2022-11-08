@@ -5,7 +5,23 @@ class ArticlesController < ApplicationController
 
 
 
-  def renglish; end
+  def renglish
+    translated_articles = @article.translated_articles
+    @translated = translated_articles.first.translated
+    unless translated_articles.first.language == current_user.language
+      translated_articles.each do |t_article|
+        if t_article.language == current_user.language
+          @translated = t_article.translated
+          break
+        end
+      end
+      if @translated == translated_articles.first.translated
+        @article.create_translated_article(current_user.language)
+        @translated = @article.translated_articles.last.language
+      end
+    end
+
+  end
 
   def user_articles
     if params[:subject]
