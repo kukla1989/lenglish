@@ -17,6 +17,17 @@
       </div>
 
       <div class="form-group mb-3 w-50">
+        <%= f.label :language, class:"form-label" %>
+        <%= f.select :language, %w{Afrikaans-af Albanian-sq Amharic-am Arabic-ar Armenian-hy Azerbaijani-az Bengali-bn
+       Bosnian-bs Bulgarian-bg Catalan-ca Croatian-hr Czech-cs Danish-da Darifa--AF Dutch-nl English-en Estonian-et
+       Finnish-fi French-fr Georgian-ka German-de Greek-el Gujarati-gu Hausa-ha Hebrew-he Hindi-hi Hungarian-hu Icelandic-is
+       Indonesian-id Irish-ga Italian-it Japanese-ja Kannada-kn Kazakh-kk Korean-ko Latvian-lv Lithuanian-lt Macedonian-mk Malay-ms
+       Malayalam-ml Maltese-mt Marathi-mr Mongolian-mn Pashto-ps Polish-pl Punjabi-pa Romanian-ro Russian-ru Serbian-sr Sinhala-si
+       Slovak-sk Slovenian-sl Somali-so Spanish-es Swahili-sw Swedish-sv Tamil-ta Telugu-te Thai-th Turkish-tr Ukrainian-uk Urdu-ur
+        Uzbek-uz Vietnamese-vi Welsh-cy}, {}, {class: "form-control"} %>
+      </div>
+
+      <div class="form-group mb-3 w-50">
         <%= f.label :password, class:"form-label" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
