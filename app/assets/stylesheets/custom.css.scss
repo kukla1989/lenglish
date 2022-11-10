@@ -78,6 +78,7 @@ textarea {
 
 .main_sentence {
   @include main;
+  margin: auto;
   width: 45%;
   margin-top: 3em;
 }

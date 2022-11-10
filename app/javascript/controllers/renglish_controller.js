@@ -12,10 +12,12 @@ export default class extends Controller {
             this.arr.push(translated_arr[i])
             this.arr.push(article_arr[i])
         }
+        console.log(this.arr)
         this.ind = -1
         while (this.arr[this.arr.length - 1] === "" || this.arr[this.arr.length - 1].length < 5) {
             this.arr.pop()
         }
+        console.log(this.arr)
     }
 
     previous() {
@@ -31,7 +33,7 @@ export default class extends Controller {
     }
 
     next() {
-        if (this.ind < this.arr.length)  {
+        if (this.ind + 1 < this.arr.length)  {
             this.ind++
             document.getElementById("sentence").innerHTML = this.arr[this.ind]
         } else {
