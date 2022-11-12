@@ -9,25 +9,24 @@ class ArticlesController < ApplicationController
     translated_articles = @article.translated_articles
     @translated = translated_articles.first.translated
     if current_user
-      unless !current_user && translated_articles.first.language == current_user.language
-        s = false
+      unless translated_articles.first.language == current_user.language
+        tmp = false
         translated_articles.each do |t_article|
           if t_article.language == current_user.language
             @translated = t_article.translated
-            s = true
+            tmp = true
             break
           end
         end
-        unless s
+        unless tmp
           @article.create_translated_article(current_user.language)
-          @translated = @article.translated_articles.last.translated
+          @translated = @article.translated_articles.reload.last.translated
         end
       end
     else
       flash[:alert] = "if you want choose you language for translated sentences "\
                          "please sign in and choose it in settings"
     end
-
   end
 
   def user_articles

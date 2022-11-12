@@ -15,7 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.datetime :remember_created_at
 
       t.string :username, null: false, unique: true
-      t.string :language, null: false, default: "ru"
+      t.string :language, null: false, default: "Russian-ru"
       t.boolean :admin,   null: false, default: false
 
       ## Trackable
