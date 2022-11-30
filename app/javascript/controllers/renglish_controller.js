@@ -23,7 +23,6 @@ export default class extends Controller {
                 }
             }
         }, 5000);
-
     }
 
     previous() {
