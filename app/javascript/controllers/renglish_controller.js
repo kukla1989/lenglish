@@ -12,12 +12,18 @@ export default class extends Controller {
             this.arr.push(translated_arr[i])
             this.arr.push(article_arr[i])
         }
-        console.log(this.arr)
         this.ind = -1
         while (this.arr[this.arr.length - 1] === "" || this.arr[this.arr.length - 1].length < 5) {
             this.arr.pop()
         }
-        console.log(this.arr)
+        setTimeout(() => {
+            for (const a of document.querySelectorAll("div")) {
+                if (a.textContent.includes("if you want choose you language for translated sentences please sign in and choose it in settings")) {
+                    a.style.display = "none"
+                }
+            }
+        }, 5000);
+
     }
 
     previous() {
